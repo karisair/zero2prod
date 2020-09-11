@@ -1,8 +1,8 @@
 //! src/main.rs
-use std::net::TcpListener;
-use zero2prod::startup::run;
-use zero2prod::configuration::get_configuration;
 use sqlx::PgPool;
+use std::net::TcpListener;
+use zero2prod::configuration::get_configuration;
+use zero2prod::startup::run;
 
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
