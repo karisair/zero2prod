@@ -22,7 +22,7 @@ jobs:
           toolchain: stable
           override: true
       - name: Migrate database
-        - run: |
+        run: |
             sudo apt-get install libpq-dev -y
             cargo install --version-0.1.0-beta.1 sqlx-cli --no-default-features --features postgres
             SKIP_DOCKER=true ./scripts/init_db.sh
@@ -41,6 +41,11 @@ jobs:
           toolchain: stable
           override: true
       - run: rustup component add rustfmt
+      - name: Migrate database
+        run: |
+          sudo apt-get install libpq-dev -y
+          cargo install --version-0.1.0-beta.1 sqlx-cli --no-default-features --features postgres
+          SKIP_DOCKER=true ./scripts/init_db.sh
       - uses: actions-rs/cargo@v1
         with:
           command: fmt
@@ -74,6 +79,12 @@ jobs:
         with:
           toolchain: stable
           override: true
+
+      - name: Migrate database
+        run: |
+          sudo apt-get install libpq-dev -y
+          cargo install --version-0.1.0-beta.1 sqlx-cli --no-default-features --features postgres
+          SKIP_DOCKER=true ./scripts/init_db.sh
 
       - name: Run cargo-tarpaulin
         uses: actions-rs/tarpaulin@v0.1
