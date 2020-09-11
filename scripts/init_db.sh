@@ -11,7 +11,7 @@ DB_NAME="${POSTGRES_DB:=newsletter}"
 # Check if a custom port has been set, otherwise default to '5432'
 DB_PORT="${POSTGRES_PORT:=5432}"
 
-DB_HOST="${POSTGRES_HOST:=localhost})"
+DB_HOST="${POSTGRES_HOST:=localhost}"
 
 # Launch postgres using Docker
 if [[ -z "${SKIP_DOCKER}" ]]
