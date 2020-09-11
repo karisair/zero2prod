@@ -1,8 +1,8 @@
 //! src/routes/subscriptions.rs
 use actix_web::{web, HttpResponse};
+use chrono::Utc;
 use sqlx::PgPool;
 use uuid::Uuid;
-use chrono::Utc;
 
 #[derive(serde::Deserialize)]
 pub struct FormData {
