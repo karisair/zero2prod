@@ -9,7 +9,7 @@ pub struct TestApp {
     pub db_pool: PgPool,
 }
 
-#[actix_rt::test]
+#[actix_web::test]
 async fn health_check_works() {
     // Arrange
     let app = spawn_app().await;
@@ -68,7 +68,7 @@ pub async fn configure_database(config: &DatabaseSettings) -> PgPool {
     connection_pool
 }
 
-#[actix_rt::test]
+#[actix_web::test]
 async fn subscribe_returns_a_200_for_valid_form_data() {
     // Arrange
     let app = spawn_app().await;
@@ -96,7 +96,7 @@ async fn subscribe_returns_a_200_for_valid_form_data() {
     assert_eq!(saved.name, "le guin");
 }
 
-#[actix_rt::test]
+#[actix_web::test]
 async fn subscribe_returns_a_400_when_data_is_missing() {
     // Arrange
     let app = spawn_app().await;
