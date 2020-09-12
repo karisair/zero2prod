@@ -20,8 +20,8 @@ pub async fn subscribe(
         VALUES ($1, $2, $3, $4)
         "#,
         Uuid::new_v4(),
-        form.email,
-        form.name,
+        &form.email,
+        &form.name,
         Utc::now()
     )
     .execute(connection.get_ref())
