@@ -14,7 +14,7 @@ pub async fn subscribe(
     form: web::Form<FormData>,
     connection: web::Data<PgPool>,
 ) -> Result<HttpResponse, HttpResponse> {
-    let _result = sqlx::query!(
+    sqlx::query!(
         r#"
         INSERT INTO subscriptions (id, email, name, subscribed_at)
         VALUES ($1, $2, $3, $4)
