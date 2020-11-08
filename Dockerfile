@@ -1,5 +1,5 @@
 # Use the latest Rust image
-FROM rust:1.49
+FROM rust:1.47
 
 # Switch to (and create) the `app` directory
 WORKDIR app
