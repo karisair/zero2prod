@@ -1,5 +1,5 @@
 # Planner stage
- FROM rust:1.48 as builder
+FROM rust:1.48 as builder
 WORKDIR app
 RUN cargo install cargo-chef
 COPY . .
